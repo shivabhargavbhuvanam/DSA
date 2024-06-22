@@ -25,6 +25,20 @@ public class dsa {
         System.out.println(binarySearch.agnosticBinarySearch(arr, 4));
         System.out.println(binarySearch.agnosticBinarySearch(arr, 14));
 
+        System.out.println("BINARY SEARCH - ELEMENT FIRST OCCURRENCE");
+        System.out.println(binarySearch.elementFirstOccurrence(occurrenceArr, 5));
+        System.out.println(binarySearch.elementFirstOccurrence(occurrenceArr, 4));
+        System.out.println(binarySearch.elementFirstOccurrence(occurrenceArr, 10));
+
+        System.out.println("BINARY SEARCH - ELEMENT LAST OCCURRENCE");
+        System.out.println(binarySearch.elementLastOccurrence(occurrenceArr, 5));
+        System.out.println(binarySearch.elementLastOccurrence(occurrenceArr, 4));
+        System.out.println(binarySearch.elementLastOccurrence(occurrenceArr, 10));
+
+        System.out.println("BINARY SEARCH - ELEMENT FREQUENCY");
+        System.out.println(binarySearch.frequencyOfElements(occurrenceArr, 5));
+        System.out.println(binarySearch.frequencyOfElements(occurrenceArr, 4));
+        System.out.println(binarySearch.frequencyOfElements(occurrenceArr, 20));
 
     }
 }

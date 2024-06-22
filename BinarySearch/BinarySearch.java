@@ -1,6 +1,5 @@
 package BinarySearch;
 
-import javax.swing.plaf.basic.DefaultMenuLayout;
 
 public class BinarySearch {
     public int ascendingOrderBinarySearch(int[] arr, int element){
@@ -70,22 +69,56 @@ public class BinarySearch {
         }
         return -1;
     }
+
     public int elementFirstOccurrence(int[] arr, int element){
         int size = arr.length;
         int start = 0;
         int end = size-1;
-        int result=0;
-        while(start<end){
+        int result=-1;
+        while(start<=end){
             int mid = start+((end-start)/2);
 
-            if(mid==element){
-                if(mid<result){
-                    result = mid;
-                }
-
+            if(arr[mid]==element){
+                result = mid;
+                end = mid-1;
+            }
+            else if(arr[mid]<element){
+                start = mid+1;
+            }
+            else{
+                end = mid-1;
             }
         }
 
-        return -1;
+        return result;
+    }
+
+    public int elementLastOccurrence(int[] arr, int element){
+        int start=0;
+        int end=arr.length-1;
+        int result =-1;
+
+        while(start<=end){
+            int mid = start+((end-start)/2);
+
+            if(arr[mid] == element){
+                result = mid;
+                start = mid+1;
+            }
+            else if(arr[mid]<element){
+                start = mid+1;
+            }
+            else{
+                end = mid-1;
+            }
+        }
+        return result;
+    }
+
+    public int frequencyOfElements(int[] arr, int element){
+        if(elementLastOccurrence(arr, element)==-1){
+            return 0;
+        }
+        return elementLastOccurrence(arr, element)-elementFirstOccurrence(arr, element)+1;
     }
 }
